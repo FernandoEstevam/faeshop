@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Garanta seu Smartwatch Premium com 50% de desconto e frete grátis. Estoque limitado. Oferta válida até hoje!" />
+        <title>Smartwatch Premium com 50% OFF - Frete Grátis Hoje</title>
+          <link rel="stylesheet" href="style.css" />
+            <script>
+                function startCountdown() {
+                      const endTime = new Date();
+                            endTime.setHours(23, 59, 59, 999);
+                                  const timer = setInterval(() => {
+                                          const now = new Date();
+                                                  const timeLeft = endTime - now;
+                                                          if (timeLeft <= 0) {
+                                                                    clearInterval(timer);
+                                                                              document.getElementById("timer").innerText = "Tempo esgotado!";
+                                                                                        return;
+                                                                                                }
+                                                                                                        const hours = String(Math.floor((timeLeft / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+                                                                                                                const minutes = String(Math.floor((timeLeft / (1000 * 60)) % 60)).padStart(2, "0");
+                                                                                                                        const seconds = String(Math.floor((timeLeft / 1000) % 60)).padStart(2, "0");
+                                                                                                                                document.getElementById("timer").innerText = `${hours}:${minutes}:${seconds}`;
+                                                                                                                                      }, 1000);
+                                                                                                                                          }
+                                                                                                                                              window.onload = startCountdown;
+                                                                                                                                                </script>
+                                                                                                                                                </head>
+                                                                                                                                                <body>
+                                                                                                                                                  <header class="hero">
+                                                                                                                                                      <h1>O Smartwatch dos Seus Sonhos Está Aqui!</h1>
+                                                                                                                                                          <p>Controle sua saúde, aumente sua produtividade e tenha estilo — tudo no seu pulso.</p>
+                                                                                                                                                              <a href="#comprar" class="btn">Garantir meu desconto agora</a>
+                                                                                                                                                                </header>
+
+                                                                                                                                                                  <section class="urgency">
+                                                                                                                                                                      <h2>Oferta Relâmpago: 50% OFF + Frete Grátis</h2>
+                                                                                                                                                                          <p><strong>Promoção termina em:</strong> <span id="timer" style="font-weight: bold; color: red;"></span></p>
+                                                                                                                                                                            </section>
+
+                                                                                                                                                                              <section class="benefits">
+                                                                                                                                                                                  <h2>Veja o que você vai levar:</h2>
+                                                                                                                                                                                      <ul>
+                                                                                                                                                                                            <li><strong>Monitoramento de saúde completo</strong> (cardíaco, pressão, sono)</li>
+                                                                                                                                                                                                  <li><strong>Notificações inteligentes</strong> (WhatsApp, chamadas, redes sociais)</li>
+                                                                                                                                                                                                        <li><strong>Estilo premium</strong> com pulseiras inclusas</li>
+                                                                                                                                                                                                              <li><strong>Bateria de longa duração</strong> (até 7 dias)</li>
+                                                                                                                                                                                                                    <li><strong>100% à prova d'água</strong></li>
+                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                          </section>
+
+                                                                                                                                                                                                                            <section class="social-proof">
+                                                                                                                                                                                                                                <h2>O que pessoas como você estão dizendo:</h2>
+                                                                                                                                                                                                                                    <blockquote>"Depois de testar vários modelos, esse smartwatch surpreendeu pela qualidade!" – Cliente verificado</blockquote>
+                                                                                                                                                                                                                                        <blockquote>"Ótimo custo-benefício. Atendeu todas as minhas expectativas." – Compra confirmada</blockquote>
+                                                                                                                                                                                                                                          </section>
+
+                                                                                                                                                                                                                                            <section class="bonus">
+                                                                                                                                                                                                                                                <h2>Bônus Exclusivo de Hoje:</h2>
+                                                                                                                                                                                                                                                    <ul>
+                                                                                                                                                                                                                                                          <li>2 pulseiras extras (esportiva e casual)</li>
+                                                                                                                                                                                                                                                                <li>E-book de treinos grátis no WhatsApp</li>
+                                                                                                                                                                                                                                                                      <li>Garantia estendida de 12 meses</li>
+                                                                                                                                                                                                                                                                          </ul>
+                                                                                                                                                                                                                                                                            </section>
+
+                                                                                                                                                                                                                                                                              <section class="promo" id="comprar">
+                                                                                                                                                                                                                                                                                  <h2>De R$399,90 por apenas <span style="color:green">R$199,90</span></h2>
+                                                                                                                                                                                                                                                                                      <p>Parcele em até 12x no cartão. Estoque limitado!</p>
+                                                                                                                                                                                                                                                                                          <a href="https://wa.me/SEUNUMERO" class="btn">Comprar agora pelo WhatsApp</a>
+                                                                                                                                                                                                                                                                                              <p><small>Pagamento 100% seguro | Garantia de 7 dias</small></p>
+                                                                                                                                                                                                                                                                                                </section>
+
+                                                                                                                                                                                                                                                                                                  <footer>
+                                                                                                                                                                                                                                                                                                      <p>© 2025 Loja Oficial SmartX. <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+                                                                                                                                                                                                                                                                                                        </footer>
+                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                        </html>
