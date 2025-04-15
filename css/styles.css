@@ -22,11 +22,8 @@ body {
 
 .container_card {
   display: grid;
-  padding: 2rem;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  gap: .5rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin: 2rem 0;
 
 }
 
@@ -277,6 +274,7 @@ ul li {
 @media (max-width: 48rem) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
 
   .grid-produtos-pages {
@@ -488,17 +486,13 @@ nav a:hover {
   width: 100%;
   background: #101010;
   color: #fff;
-  padding: 1rem 0;
   margin-top: 1rem;
-  /* padding: 40px 20px 20px; */
 }
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 1200px;
+  max-width: 75rem;
+  padding: 2rem;
   margin: auto;
 }
 
@@ -545,6 +539,7 @@ nav a:hover {
   border-top: 1px solid #333;
   font-size: 13px;
   color: #aaa;
+  /* padding: 1rem; */
 }
 
 .footer-bottom p {
@@ -553,10 +548,14 @@ nav a:hover {
 
 /* 🎯 Responsividade */
 @media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .footer-container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
   }
 
   .footer-section {
@@ -581,18 +580,10 @@ nav a:hover {
     text-align: center;
   }
 
-  .whatsapp-float {
-    bottom: 80px;
-    right: 80px;
-    z-index: 999;
-  }
-
   .container_card .cards {
     display: grid;
     grid-template-columns: repeat(1fr);
     gap: 1rem;
-
-
   }
 
   .banner-slider {
