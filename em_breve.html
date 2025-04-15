@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Em Breve - FAEshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0077cc, #00bcd4);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      animation: pulse 2s infinite;
+    }
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .mensagem {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .digitando::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .voltar {
+      margin-top: 2rem;
+      display: inline-block;
+      background: white;
+      color: #0077cc;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .voltar:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ícone SVG de loja/eletrônicos -->
+  <svg class="icon" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 
+             0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.82 14h8.86c.75 
+             0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 21.17 5H5.21L4.27 
+             3H1v2h2l3.6 7.59-1.35 2.44C4.52 16.37 5.48 18 7 18h12v-2H7l1.1-2z"/>
+  </svg>
+
+  <h1>Em Breve!</h1>
+  <div class="mensagem digitando">Estamos preparando novidades incríveis para você...</div>
+  <a class="voltar" href="index.html">Voltar para a Loja</a>
+
+</body>
+</html>

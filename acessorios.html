@@ -4,29 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAEshop - Loja de Tecnologia com os Melhores Preços</title>
-  <meta name="description"
-    content="Descubra os melhores smartphones, smartwatches, acessórios e muito mais na FAEshop. Tecnologia de ponta com preços imperdíveis!">
-  <meta name="keywords" content="FAEshop, loja de tecnologia, smartwatches, smartphones, acessórios, eletrônicos">
-  <meta name="author" content="FAEshop">
+  <title>Acessórios - FAEshop</title>
+  <meta name="description" content="Cabos, carregadores, suportes, capas e muito mais em acessórios de qualidade.">
+  <meta name="keywords" content="acessórios para celular, carregadores, capas, suporte, FAEshop">
   <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Open Graph (Facebook, LinkedIn) -->
-  <meta property="og:title" content="FAEshop - Loja de Tecnologia com os Melhores Preços">
-  <meta property="og:description"
-    content="A FAEshop tem tudo o que você precisa em tecnologia: celulares, relógios inteligentes, fones e mais.">
-  <meta property="og:image" content="https://seusite.com/imagens/og-fae.jpg">
-  <meta property="og:url" content="https://seusite.com">
-  <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Acessórios - FAEshop">
+  <meta property="og:description" content="Tudo o que você precisa para complementar seus dispositivos.">
+  <meta property="og:image" content="https://seusite.com/imagens/og-acessorios.jpg">
+  <meta property="og:url" content="https://seusite.com/acessorios.html">
+  <meta property="og:type" content="product.group">
 </head>
+
 
 <body>
   <header>
     <h1><a href="/"><img src="imagens/logo.png" alt="FAEshop"></a></h1>
     <div>
       <h2>FAEShop – Conectando o futuro</h2>
-      <h3>A melhor seleção em tecnologia para você!</p>
+      <p>A melhor seleção em tecnologia para você!</p>
     </div>
   </header>
 
@@ -38,27 +36,9 @@
     <a href="/acessorios.html">Acessórios</a>
     <a href="/outros.html">Outros</a>
   </nav>
-
-  <div class="banner-slider">
-    <div class="banner-slides" id="banner-slides">
-      <img src="/imagens/banner_1.jpg" alt="Banner 1">
-      <img src="/imagens/banner_2.jpg" alt="Banner 2">
-      <!-- Adicione mais banners aqui se quiser -->
-    </div>
-    <div class="banner-dots" id="banner-dots">
-      <span class="dot active" onclick="goToBannerSlide(0)"></span>
-      <span class="dot" onclick="goToBannerSlide(1)"></span>
-    </div>
-  </div>
-
-  <div class="dots" id="dots">
-    <span class="dot active" onclick="goToSlide(0)"></span>
-    <!-- Adicione mais dots se tiver mais banners -->
-    <!-- <span class="dot" onclick="goToSlide(1)"></span> -->
-  </div>
   <div class="container">
-    <div class="grid-produtos-pages " id="produtos-container"></div>
-    <a href="https://wa.me/5511999998888?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20um%20produto."
+    <div class="grid-produtos-page" id="produtos-container"></div>
+    <a href="https://wa.me/5511995821424?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20um%20produto."
       class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
     </a>
@@ -112,83 +92,28 @@
       <p>&copy; 2025 FAEShop. Todos os direitos reservados.</p>
     </div>
   </footer>
-
   <script>
     fetch('produtos.json')
       .then(res => res.json())
       .then(produtos => {
         const container = document.getElementById('produtos-container');
-        // Agrupar produtos por categoria
-        const produtosPorCategoria = {};
         produtos.forEach(produto => {
-          const categoria = produto.categoria
-          if (!produtosPorCategoria[categoria]) {
-            produtosPorCategoria[categoria] = [];
-          }
-
-          if (produtosPorCategoria[categoria].length < 3) {
-            produtosPorCategoria[categoria].push(produto);
-          }
-        });
-        // Agora renderiza até 3 produtos por categoria, com um título acima
-        Object.entries(produtosPorCategoria).forEach(([categoria, produtosCategoria]) => {
-
-          const containerCard = document.createElement('div')
-          const titulo = document.createElement('h2')
-          const cards = document.createElement('div')
-
-          containerCard.className = "container_card"
-
-          cards.className = "cards"
-
-          // Criar o título da categoria
-          titulo.textContent = "Novidades " + categoria.charAt(0).toUpperCase() + categoria.slice(1); // Capitaliza a categoria
-          titulo.className = 'titulo-categoria'; // Você pode estilizar esse class no CSS
-
-          // Adicionar os produtos
-          produtosCategoria.forEach(produto => {
+          if (produto.categoria === "acessorios") {
             const card = document.createElement('div');
             card.className = 'produto';
             card.innerHTML = `
-            <a href="${produto.categoria}.html">
-              <img src="${produto.imagemPrincipal}" alt="${produto.titulo}" />
-              <div class="titulo">${produto.titulo}</div>
-              <div class="preco">${produto.preco}</div>
-              <span class="btn_veja_mais">conheça mais</span>
+              <a href="${produto.categoria}_id.html?id=${produto.id}">
+                <img class="img_principal" src="${produto.imagemPrincipal}" alt="${produto.titulo}" />
+                <span class="titulo">${produto.titulo}</span>
+                <span class="preco">${produto.preco}</span>
+                <span class="btn_veja_mais">Conheça mais</span> 
               </a>
-              `;
-
-
-            cards.appendChild(card)
-
-            containerCard.appendChild(titulo);
-
-            containerCard.appendChild(cards);
-
-            container.appendChild(containerCard)
-          });
+            `;
+            container.appendChild(card);
+          }
         });
       });
-    let currentBanner = 0;
-    const bannerSlides = document.getElementById('banner-slides');
-    const bannerDots = document.querySelectorAll('.banner-dots .dot');
-    const totalBanners = bannerSlides.children.length;
-
-    function goToBannerSlide(index) {
-      currentBanner = index;
-      const offset = -index * 100;
-      bannerSlides.style.transform = `translateX(${offset}%)`;
-      bannerDots.forEach(dot => dot.classList.remove('active'));
-      bannerDots[index].classList.add('active');
-    }
-
-    setInterval(() => {
-      currentBanner = (currentBanner + 1) % totalBanners;
-      goToBannerSlide(currentBanner);
-    }, 5000);
-
   </script>
-
 </body>
 
 </html>
