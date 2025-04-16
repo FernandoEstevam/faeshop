@@ -137,6 +137,19 @@
           return;
         }
 
+        const produtoInfo = {
+          nome: produto.titulo,
+          link: `https://fernandoestevam.github.io/faeshop/${produto.categoria}_id.html?id=${produto.id}`
+        };
+
+        // Mensagem personalizada
+        const mensagem = `Olá! Tenho interesse no produto *${produtoInfo.nome}*. 
+        Poderia me passar mais informações? Aqui está o link: ${produtoInfo.link}`;
+
+        // Montar URL do WhatsApp
+        const numero = "5511995821424"; // Coloque seu número aqui
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
         container.innerHTML = `
           <div class="imagem">
             <div class="carrossel">
@@ -156,6 +169,10 @@
                   </div>
                 `).join('')}
               </div>
+              <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-button">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
+                <span>Falar no WhatsApp</span>
+              </a>
             </div>
           </div>
           <div class="info">
@@ -167,6 +184,12 @@
             </ul>
           </div>
         `;
+
+        // Evento para abrir o link
+        document.getElementById('whatsapp-link').addEventListener('click', function (e) {
+          e.preventDefault();
+          window.open(url, "_blank");
+        });
       });
   </script>
 </body>
